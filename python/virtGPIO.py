@@ -92,6 +92,8 @@ def _SerialWrite(s):
             Serial.write(''.join(chr(e) for e in s))   # -> str incl int8
         else:
             Serial.write(bytes(s))    # -> bytes with int8
+            print(s)
+            print(bytes(s))
 
 
 def _SerialRead(count=1):
@@ -448,13 +450,14 @@ class Servo:
     # Using any servos disables PWM on pins 9-10  (uses Timer1)
 
     def __init__(self, pin):   #  pin 3 - 10
-        setup(pin, OUTPUT)
+        setup(pin, OUT)
         self.pin = pin
         pass
 
     def write(self, value):
-        _SerialWrite("V" + chr(self.pin))   # 2-10
-        _SerialWrite([value])  #  0-180
+        _SerialWrite("V" + chr(self.pin) + chr(value))   # 2-10 and 0-180
+        # TODO: throw exception for invalid pins
+        # TODO: clamp servo angle limits
 
     def stop(self):
         _SerialWrite("v" + chr(self.pin))
