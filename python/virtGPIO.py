@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# virtGPIO.py   V0.9.6
+# virtGPIO.py   V0.9.7
 
 """
 "Virtual GPIO" uses an arduino as a GPIO device to a Raspberry Pi or PC.
@@ -187,7 +187,7 @@ for k in range(len(baudlist)):
         if verboseSetup:
             print ("Trying baudrate"),
             print (baudlist[k])
-        Serial.setBaudrate(baudlist[k])   # Try each baudrate in turn from our list
+        Serial.baudrate = baudlist[k]   # Try each baudrate in turn from our list
     except:
         print ("Device at %s can not operate at baudrate %d" % (Serial.port,baudlist[k]))
         print ("Change options in 'serialConfig.py'")
