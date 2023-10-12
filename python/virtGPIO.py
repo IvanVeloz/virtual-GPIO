@@ -133,7 +133,7 @@ STDTIMEOUT = 0.8
 # Following are DEFAULT portnames and baudrates that are attempted for virtGPIO.
 # Optional file serialConfig.py can override these defaults.
 baudlist = [500000, 115200, 250000]
-portlist = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyAMA0', 'COM1', "COM3", "COM8", "COM9"]
+portlist = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyACM0', '/dev/ttyACM1', '/dev/ttyACM2', '/dev/ttyAMA0', 'COM1', "COM3", "COM8", "COM9"]
 # (these lists may be edited. 500000 baud recommended, list it first.)
 # (I'm not a Mac person. So of course, I haven't tested a Mac.
 #           Try "ls /dev/tty.*" in terminal to help find your Mac serial port name.)
